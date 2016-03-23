@@ -1,21 +1,67 @@
-<h1>Listing articles</h1>
- 
-<%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<div id="container">
+  
+  <div id="banner">
+    <h1>Huong Thao</h1>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="#">HOMEPAGE</a></li>
+      <li id="active"><a id="current" href="#">List of my articles</a></li>
+      <li><a href="#">GALLERY</a></li>
+      <li><a href="#">LINKS</a></li>
+      <li><a href="#">SERVICE</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </div>
+  
+  <div id="sidebar">
+    <h2>Resources</h2>
+    <div class="navlist">
+      <ul>
+        <li><a href="#">Snapp Happy</a></li>
+        <li><a href="#">TODC</a></li>
+        <li><a href="#">OWD</a></li>
+        <li><a href="#">OSWD</a></li>
+        <li><a href="#">CSS play</a></li>
+        <li><a href="#">Andreas Viklund</a></li>
+        <li><a href="#">James Koster</a></li>
+      </ul>
+    </div>
+    <h2>Sub Menu</h2>
+    <div class="navlist">
+      <ul>
+        <li><a href="#">Link One</a></li>
+        <li><a href="#">Link Two</a></li>
+        <li><a href="#">Link Three</a></li>
+        <li><a href="#">Link Four</a></li>
+      </ul>
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  </div>
+  
+  <div id="content">
+    <h2>Welcome to <span style="color:#B29B35;"> my</span> Blog</h2>
+    <blockquote>This template has been tested in Mozilla and IE7. The page validates as XHTML 1.0 Transitional using valid CSS.<br />
+      For more FREE templates visit <a href="http://www.mitchinson.net">my website</a>.</blockquote>
+    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <%= link_to 'New article', new_article_path %>
+    <h2>Title</h2>
+    <% @articles.each do |article| %>
+    <p class="info"><img class="noborder" src="/images/flower.jpg"  alt="flower" title="flower"/><%= article.title %></p>
+    <p><%= article.text %></p>
+    <p class="post"> <a href="#" class="readmore"><%= link_to 'Show', article_path(article) %></a> 
+                     <a href="#" class="comments"><%= link_to 'Edit', edit_article_path(article) %></a> 
+                     <span class="date"><%= link_to 'Destroy', article_path(article),method: :delete,data: { confirm: 'Are you sure?' } %></span> 
+    </p>
+     <% end %>
+  </div>
+  
+  <div id="container-foot">
+    <div id="footer">
+      <p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2007 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> | Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a></p>
+    </div>
+  </div>
+  
+</div>
+  
+  
